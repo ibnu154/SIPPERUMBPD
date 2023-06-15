@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>register form</title>
+   <script type="text/javascript">
+      function validateForm() {
+          var name = document.forms["registrationForm"]["name"].value;
+          var email = document.forms["registrationForm"]["email"].value;
+          var password = document.forms["registrationForm"]["password"].value;
+          var confirmPassword = document.forms["registrationForm"]["confirmPassword"].value;
+
+          if (name !== "ibnu" || email !== "pramono@email.com" ||
+              password !== "admin" || confirmPassword !== "admin") {
+              alert("Kolom registrasi tidak sesuai persyaratan.");
+              return false;
+          } else {
+              alert("Registrasi berhasil!");
+              window.location.href = "login.html";
+              return false;
+          }
+      }
+  </script>
+</head>
+<style>
+   html{
+    font-family: 'Times New Roman', Courier, monospace;
+    font-size: 15px;
+    background-image:url(image/land.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#utama{
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 12%;
+}
+#judul{
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 12%;
+    padding: 15px;
+    text-align: center;
+    color: fff;
+    font-size: 20px;
+    border-bottom: 2px solid black;
+    background-color: crimson;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#inputan{
+    width: 390px;
+    height: auto;
+    background-color: #eaeaea;
+    padding: 20px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+input{
+    padding: 10px;
+    border: 1px;
+    width: 370px;
+}
+.submit{
+    background-color: crimson;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: #fff;
+    margin-left: 10px;
+}
+.submit:hover{
+    background-color: white;
+    color: crimson;
+    cursor: pointer;
+}
+p{
+    font-size: 15px;
+    text-align: center;
+}
+p a{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 4px;
+}
+p a:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+</style>
+<body>
+<div id="utama">
+   <div id="judul">
+        Halaman Registrasi
+   </div>
+    <div id="inputan">
+      <form name="registrationForm" onsubmit="return validateForm()">
+         <div>
+            <input type="text" name="name" required placeholder="Masukan nama lengkap"><br>
+         </div>
+         <div>
+            <input type="email" name="email" required placeholder="Masukan email"><br>
+         </div>
+         <div>
+            <input type="password" name="password" required placeholder="Masukan password"><br>
+         </div>
+         <div>
+            <input type="password" name="confirmPassword" required placeholder="Masukan password ulang"><br>
+         </div>
+         <div>
+            <input type="submit" name="submit" value="Registrasi Sekarang" class="submit">
+         </div>
+         <div>
+            <p>sudah punya akun? <a href="login.html">silahkan login</a></p>
+            <p>anda pengunjung? <a href="index.html">kembali ke Home</a></p>
+         </div>
+      </form>
+   </div>
+</div> 
+</body>
+</html>
